@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="placeHolder"
+		class=" org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="Locations" value="resources/datasource.proporties"></property>
+
+	</bean>
+	<!-- pphc class going to read proporties file -->
+
+	<bean id="application" class="com.xworkz.di.component.Application ">
+		<property name="appName" value="${app.appname}"></property>
+
+	</bean>
+
+	<bean id="applicationtotal" class="com.xworkz.di.component.ApplicationTotal">
+		<property name="name" value="${application.applicationName}"></property>
+		<property name="version" value="${application.applictaionVersion}"></property>
+		<property name="type" value="${application.applicationType}"></property>
+		<property name="active" value="${application.applicationactive}"></property>
+
+	</bean>
+
+
+	<bean id="dbms"
+		class=" org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<constructor-arg value="${datasource.url}"></constructor-arg>
+		<constructor-arg value="${datasource.userName}"></constructor-arg>
+		<constructor-arg value="${datasource.password}"></constructor-arg>
+		<property name="driverClassName" value="${datasource.driver}"></property>
+
+
+	</bean>
+
+
+
+
+
+</beans>

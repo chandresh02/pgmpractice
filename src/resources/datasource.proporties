@@ -1,0 +1,13 @@
+app.appname=whatsApp
+
+
+datasource.url=jdbc:mysql://localhost:3306/19thor
+datasource.userName=root
+datasource.password=vinay
+datasource.driver=com.mysql.jdbc.Driver
+
+
+application.applicationName=facebook
+application.applictaionVersion=35
+application.applicationType=chatting
+application.applicationactive=yes
